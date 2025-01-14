@@ -3,100 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U. Abdullah A. - Koran- & Arabischlehrer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Terminbuchungssystem</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Script um die Höhe des iframes dynamisch anzupassen */
-        <script>
-            window.addEventListener('message', function(event) {
-                // Nur Nachrichten von der Google Apps Script URL akzeptieren
-                if (event.origin.includes('script.google.com')) {
-                    const iframe = document.getElementById('bookingFrame');
-                    if (iframe && event.data.height) {
-                        iframe.style.height = event.data.height + 'px';
-                    }
-                }
-            });
-        </script>
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #212529;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .content {
+            flex: 1;
+            position: relative;
+            height: calc(100vh - 70px); /* Abzüglich der Header-Höhe */
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.25rem;
+            }
+        }
     </style>
 </head>
-<body class="min-h-screen bg-white">
-    <div class="w-full max-w-4xl mx-auto px-4 py-8">
-        <!-- Profile Header -->
-        <div class="flex flex-col items-center mb-12">
-            <img src="images/profilbild-mann.png" alt="U. Abdullah A." class="w-32 h-32 mb-4">
-            <h1 class="text-2xl font-bold mb-1">U. Abdullah A.</h1>
-            <p class="text-xl mb-8">Koran- & Arabischlehrer</p>
-        </div>
-
-        <!-- Qualifikationen -->
-        <div class="mb-8">
-            <div class="flex items-center mb-4">
-                <img src="images/graduation-cap.png" alt="" class="w-6 h-6 mr-2">
-                <h2 class="text-xl font-bold">Qualifikationen:</h2>
-            </div>
-            <ul class="list-disc ml-8 space-y-1">
-                <li>Zertifizierter Koranlehrer</li>
-                <li>B.A. in Islamwissenschaften (Azhar-Universität)</li>
-                <li>5 Jahre Lehrerfahrung</li>
-            </ul>
-        </div>
-
-        <!-- Unterrichtsfächer -->
-        <div class="mb-8">
-            <div class="flex items-center mb-4">
-                <img src="images/book.png" alt="" class="w-6 h-6 mr-2">
-                <h2 class="text-xl font-bold">Unterrichtsfächer:</h2>
-            </div>
-            <ul class="list-disc ml-8 space-y-1">
-                <li>Koran für Anfänger & Fortgeschrittene</li>
-                <li class="ml-4 text-gray-600">Lesearten: Hafs, Warsch</li>
-                <li>Arabisch für Anfänger</li>
-            </ul>
-        </div>
-
-        <!-- Verwendete Lehrwerke -->
-        <div class="mb-8">
-            <div class="flex items-center mb-4">
-                <img src="images/books.png" alt="" class="w-6 h-6 mr-2">
-                <h2 class="text-xl font-bold">Verwendete Lehrwerke:</h2>
-            </div>
-            <ul class="list-disc ml-8 space-y-1">
-                <li>Nour al-Bayan</li>
-                <li>Al-Arabiyya bayna Yadaik</li>
-                <li>Madina Buchreihe</li>
-            </ul>
-        </div>
-
-        <!-- Weitere wichtige Informationen -->
-        <div class="mb-12">
-            <div class="flex items-center mb-4">
-                <img src="images/info.png" alt="" class="w-6 h-6 mr-2">
-                <h2 class="text-xl font-bold">Weitere wichtige Informationen:</h2>
-            </div>
-            <ul class="list-disc ml-8 space-y-1">
-                <li>Unterrichtet Erwachsene & Kinder ab ... Jahren</li>
-                <li>Spricht Deutsch auf Niveau A2</li>
-                <li>Zählt zu unseren Lehrkräften aus Ägypten (siehe Preise)</li>
-            </ul>
-        </div>
-
-        <!-- Buchungssystem -->
-        <div class="w-full">
-            <h2 class="text-2xl font-bold text-center text-[#5B6B99] mb-8">Buche Deine Probestunde</h2>
+<body>
+    <div class="container">
+        <header>
+            <h1>Terminbuchungssystem</h1>
+        </header>
+        <main class="content">
             <iframe 
-                id="bookingFrame"
                 src="https://script.google.com/macros/s/AKfycby0pX091y95sya8rPirqpDDTcoRasYZsoThMHP87rmmD_fEF3cJQAG3W2JfWRl6gyrC/exec"
-                style="width: 100%; min-height: 1000px; border: none;"
-                scrolling="no"
                 loading="lazy"
                 title="Terminbuchungssystem">
             </iframe>
-        </div>
+        </main>
     </div>
 </body>
 </html>
